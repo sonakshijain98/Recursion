@@ -1,0 +1,23 @@
+#include <iostream>
+
+using namespace std;
+void Print(int arr[],int i){
+    if(i==-1)
+     return;
+     
+    cout<<arr[i]<<" ";
+    Print(arr,--i);
+    
+   
+}
+
+int main()
+{
+    int arr[5];
+    int size=5;
+    int val=5;
+    for(int i=0;i<5;i++)
+     cin>>arr[i];
+    Print(arr,size-1);
+    return 0;
+}

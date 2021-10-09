@@ -1,0 +1,24 @@
+#include <iostream>
+
+using namespace std;
+void SearchElement(int arr[], int i,int val){
+    if(i == -1)
+      return;
+    if(val==arr[i]){
+        cout<<i+1<<endl;
+        return;
+    }
+    SearchElement(arr,i-1,val);
+}
+
+int main()
+{
+    int arr[5];
+    int size=5;
+    int i=size;
+    int val=5;
+    for(int i=0;i<5;i++)
+     cin>>arr[i];
+    SearchElement(arr,i-1,val);
+    return 0;
+}

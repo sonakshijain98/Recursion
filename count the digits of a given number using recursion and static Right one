@@ -1,0 +1,18 @@
+#include <iostream>
+
+using namespace std;
+int CountNumber(int n){
+    static int c=0;
+    if(n==0){
+        return c;
+    }
+    ++c;
+    return CountNumber(n/10);
+}
+int main()
+{
+    int n;
+    cin>>n;
+    cout<<CountNumber(n);
+    return 0;
+}

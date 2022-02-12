@@ -1,0 +1,45 @@
+#include <iostream>
+
+using namespace std;
+void printArray(int* arr, int start,int end){
+    for(int i=start;i<=end;i++){
+        cout<<arr[i]<<" ";
+    }
+    cout<<endl;
+}
+bool binarySearch(int* arr, int start, int end, int key){
+    printArray(arr,start, end);
+    /*if(end<0 || start>end){
+        return false;
+    }*/
+    if(start>end){
+        return false; 
+    }
+    //int mid=(start+end)/2;
+    int mid=start+(end-start)/2;
+    if(arr[mid]==key){
+        return true;
+    }
+    else if(arr[mid]>key){
+        bool ans=binarySearch(arr, start , mid-1, key);
+        return ans;
+    }
+    else{
+        bool ans=binarySearch(arr, mid+1, end, key);
+        return ans;
+    }
+}
+
+int main()
+{
+    int arr[5]={1,2,3,4,5};
+    int key=0;
+    if(binarySearch(arr,0,4,key)==true){
+        cout<<"Found";
+    }
+    else{
+        cout<<"Not Found";
+    }
+
+    return 0;
+}
